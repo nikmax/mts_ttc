@@ -1,0 +1,13 @@
+#!/bin/bash
+url="https://mts-olimp-cloud.codenrock.com/api"
+token="o7e7QThoMe8U6AoI80qVDL98mmGk9GE3"
+  #    1	"cost":9
+  #    2	"cpu":10
+  #    3	"cpu_load":2.11745
+  #    4	"failed":false
+  #    5	"failed_until":"2023-10-16T08:18:05"
+  #    6	"id":253639
+  #    7	"ram":10
+  #    8	"ram_load":2.25807
+r=`curl -s -X 'GET' -H 'accept: */*' "$url/resource?token=$token"`
+echo $r | jq '.[].id'
